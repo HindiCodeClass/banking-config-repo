@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: banking-api-gateway
+    name: api-gateway
 
   profiles:
     active: dev
