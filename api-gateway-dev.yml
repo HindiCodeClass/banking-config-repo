@@ -41,12 +41,20 @@ spring:
             - name: CircuitBreaker
               args:
                 name: transactionCB
+                fallbackUri: forward:/fallback/transaction
 
         - id: auth-service
           uri: lb://AUTH-SERVICE
           predicates:
             - Path=/auth/**
             - Path=/oauth2/**
+          filters:
+            - StripPrefix=1
+
+        - id: customer-service
+          uri: lb://CUSTOMER-SERVICE
+          predicates:
+            - Path=/api/customers/**
           filters:
             - StripPrefix=1
 
