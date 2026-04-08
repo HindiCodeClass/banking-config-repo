@@ -54,7 +54,7 @@ spring:
         - id: customer-service
           uri: lb://CUSTOMER-SERVICE
           predicates:
-            - Path=/api/customers/**
+            - Path=/customers/**
           filters:
             - StripPrefix=1
 
