@@ -46,8 +46,7 @@ spring:
         - id: auth-service
           uri: lb://AUTH-SERVICE
           predicates:
-            - Path=/auth/**
-            - Path=/oauth2/**
+            - Path=/auth/**,/oauth2/**
           filters:
             - StripPrefix=1
 
